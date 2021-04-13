@@ -73,24 +73,24 @@ function DoPreReqs() {
     case "$osdistro" in
         ubuntu)
             echo "I'll try to install the required packages"
-            apt-get install make gcc pkg-config libgmp10 libgmp-dev libsystemd-dev libssl-dev python3-pexpect
+            apt-get install make gcc pkg-config libgmp10 libgmp-dev libsystemd-dev libssl-dev python3-pexpect zip
             echo "Check above to ensure everything got installed"
             ;;
         opensuse*)
             echo "I'll try to install the required packages"
-            zypper in make gcc gmp-devel systemd-devel libopenssl-1_1-devel python3-pexpect
+            zypper in make gcc gmp-devel systemd-devel libopenssl-1_1-devel python3-pexpect zip
             echo "Check above to ensure everything got installed"
             ;;
         centos|rhel|fedora)
             echo "I'll try to install the required packages, but this is incomplete"
-            yum install gcc gmp-devel.x86_64 systemd-devel.x86_x64 openssl-devel.x86_64
+            yum install gcc gmp-devel.x86_64 systemd-devel.x86_x64 openssl-devel.x86_64 zip
             echo "Check above to ensure everything got installed"
             echo "** You'll need to install python3 and pexpect if they are not already installed"
             ;;
         debian|raspbian)
             echo "** Ensure your Pi is up to date"
             echo " Your Pi must be up to date with the Raspbian repositories by using these commands"
-	    echo ""
+	        echo ""
             echo "    sudo apt-get update"
             echo "    sudo apt-get upgrade"
             echo ""
